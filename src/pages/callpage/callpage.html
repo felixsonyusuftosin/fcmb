@@ -1,0 +1,86 @@
+<!--
+  Generated template for the Callpage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--<ion-header>
+
+  <ion-navbar>
+    <ion-title>callpage</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+
+<ion-content  class = "">
+<!--calling entering or calling-->
+<div class = "cover" *ngIf = "ss.isCalling &amp;&amp; !ss.callIgnored &amp;&amp; !ss.callEnded &amp;&amp; !ss.callInProgress &amp;&amp; !ss.isDialling &amp;&amp;  !ss.default">
+  <div class = "identitydiv">
+    <div class = "topdv bg"></div>
+  <div class = "titleholders">
+<div class = "title">Calling {{peer_id}} ..</div>  
+<div class = "subtitle">0&amp;:&amp;00 </div>  
+</div>  
+ </div>
+  <div class = "calldiv">
+    <div class = "callers">
+   <ion-icon class = "onebutton double mleft" name = "call" (click) = "ss.answer(id,peer_id)" ></ion-icon> <ion-icon class = "endbutton double " name = "call" (click) = "ss.ignore()" ></ion-icon>
+    </div>
+  </div>
+</div>
+<div class = "cover" *ngIf = "ss.callInProgress &amp;&amp;  !ss.isCalling &amp;&amp; !ss.callIgnored &amp;&amp; !ss.callEnded  &amp;&amp; !ss.isDialling  &amp;&amp;  !ss.default">
+  <div class = "identitydiv">
+    <div class = "topdv bg"></div>
+  <div class = "titleholders">
+<div class = "title">Calling {{ss.peer_id}} </div>  
+<div class = "subtitle">0&amp;:&amp;00 </div>  
+</div>  
+ </div> 
+  <div class = "calldiv">
+    <div class = "callers">
+    <ion-icon class = "endbutton central" name = "call" (click) = "ss.end()" ></ion-icon>
+    </div>
+  </div>
+</div>
+<div class = "cover" *ngIf = "ss.isDialling  &amp;&amp; !ss.default &amp;&amp; !ss.callInProgress &amp;&amp;  !ss.isCalling &amp;&amp; !ss.callIgnored &amp;&amp; !ss.callEnded  ">
+  <div class = "identitydiv">
+    <div class = "topdv bg"></div>
+  <div class = "titleholders">
+<div class = "title">Calling {{ss.peer_id}} </div>  
+<div class = "subtitle">0&amp;:&amp;00 </div>  
+</div>  
+ </div> 
+  <div class = "calldiv">
+    <div class = "callers">
+    <ion-icon class = "endbutton central" name = "call" (click) = "ss.end()" ></ion-icon>
+    </div>
+  </div>
+</div>
+<!--  caller -->
+<div class = "cover" *ngIf = "!ss.isCalling  &amp;&amp;  !ss.callInProgress  &amp;&amp; !ss.isDialling ||  ss.default || ss.callIgnored || ss.callEnded">
+  <div class = "top" > 
+    <div class = "firstline"><ion-icon (click) ="dismiss()" class = "arrow"name = "arrow-back"></ion-icon>{{item.address}}</div>
+    <div class = "middleline">{{item.geoaddress}}</div>
+    <div class = "bottomline"><div class = "img gt"></div><ion-icon class = "i" name= "call"></ion-icon><ion-icon name= "text" class = "i" ></ion-icon> <ion-icon name= "timer" class = "i" ></ion-icon></div>
+    <div class = "extra">{{call.users.length}} Possible callers are on line</div>
+  </div>
+   <div class = "middle"  >
+     <div class = "item" *ngFor = "let imo of ss.users" >
+       <div class = "itemfirst"><ion-icon  class = "i"  name = "call"></ion-icon>{{imo.id}}</div><div class = "itemsecond">Customer Care representative</div>
+      <div class = "chatboxes">
+      <div class = ""><ion-icon name = "text"></ion-icon>Chat</div>
+      <div class = "" (click) = "scall.startCall(imo.id, ss.id)"><ion-icon name = "call" ></ion-icon>Call</div>
+      <div class = ""><ion-icon name = "briefcase"></ion-icon>Mail</div>
+      </div>
+     </div>
+   </div>
+    <div class = "bottom" >
+      <div class = "bboxes bluebg white"><ion-icon class = "im white" name= "call"></ion-icon> <span class = "white"> call random</span>
+
+      </div>
+      <div class = "bboxes"><ion-icon class = "im" name= "time"></ion-icon><span>Appointment</span></div>
+      <div class = "bboxes lb"><ion-icon class = "im" name= "text"></ion-icon><span>Chat</span></div>
+    </div>
+</div>
+
+</ion-content>

@@ -1,0 +1,84 @@
+<!--
+  Generated template for the Form page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Open An Account</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content >
+ <div class = "heading"><ion-icon name = "arrow-back" (click) = "poppage()"></ion-icon> Mobile Account Opening</div>
+ <div class = "subhead">Dont have an UBN Account ?<br/> You can open a functional account right here and now.</div>
+ <div class = "user"><span class = "sp gt"></span></div>
+  <div class = "steps" (click) = "type =true;subtypecurrent = false;subtypesavings = false; explain = false " *ngIf = "type  && !subtypecurrent && !subtypesavings"><i class = "fa fa-circle active"></i><i class = "fa fa-circle"></i><i class = "fa fa-circle"></i><i class = "fa fa-circle"></i><i class = "fa fa-circle"></i></div>
+  <div class = "steps"  *ngIf = "subtypesavings " (click) = "type =false;subtypecurrent = false;subtypesavings = true; explain = false "><i class = "fa fa-circle "></i><i class = "fa fa-circle active"></i><i class = "fa fa-circle"></i><i class = "fa fa-circle"></i><i class = "fa fa-circle"></i></div>
+ <div class = "steps"  *ngIf = "subtypecurrent" (click) = "type =false;subtypecurrent = true;subtypesavings = false; explain = false "><i class = "fa fa-circle "></i><i class = "fa fa-circle active"></i><i class = "fa fa-circle"></i><i class = "fa fa-circle"></i><i class = "fa fa-circle"></i></div>
+<div class = "steps"  *ngIf = "explain" (click) = "type =false;subtypecurrent = false;subtypesavings = false; explain = true"><i class = "fa fa-circle "></i><i class = "fa fa-circle"></i><i class = "fa fa-circle active"></i><i class = "fa fa-circle"></i><i class = "fa fa-circle"></i></div>
+
+ <div class = "form" *ngIf = "type  && !subtypecurrent && !subtypesavings">
+    <ion-list-header >
+    SELECT ACCOUNT TYPE
+  </ion-list-header>
+  <ion-list radio-group >
+  <ion-item>
+    <ion-label>Savings Account</ion-label>
+    <ion-radio value="savings" (ionSelect) = "typer(1)"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>Current Account</ion-label>
+    <ion-radio value="savings" (ionSelect) = "typer(2)"></ion-radio>
+  </ion-item>
+
+</ion-list>
+   </div>
+    <div class = "form" *ngIf = "subtypesavings ">
+    <div class ="ithead">Select One Of the Following</div>
+  <div  *ngFor = "let i of accounttypesavings" formgroup>
+  <ion-item >
+    <ion-label>{{i.name}}</ion-label>
+    <ion-radio value="i.name" (ionSelect) = "typeb(i)"></ion-radio>
+  </ion-item>
+  </div>
+   </div>
+   <div class = "form" *ngIf = "subtypecurrent" >
+<div class ="ithead">Select One Of the Following</div>
+<div *ngFor = "let i of accounttypecurrent" formgroup>
+  <ion-item>
+    <ion-label>{{i.name}}</ion-label>
+    <ion-radio value="i.name" (ionSelect) = "typeb(i)"></ion-radio>
+  </ion-item>
+</div>
+   </div>
+
+ <div class = "form explain " *ngIf = "explain">
+   <div class = "close" (click) = "close()"><i class = "fa fa-close"></i></div>
+   <div class = "explainheader">{{explainheader}}</div>
+   <p>{{explaintext}}</p>
+   <button ion-button light full (click) ="biol()" >Continue</button>
+   </div>
+
+   <form  class = "form"  [formGroup]="todo"  *ngIf = "finals" (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label>First Name</ion-label>
+        <ion-input type="text" formControlName="firstname"></ion-input>
+      </ion-item>
+        <ion-item>
+      <ion-label>Last  Name</ion-label>
+        <ion-input type="text" formControlName="Lastname"></ion-input>
+      </ion-item> 
+       <ion-item>    
+      <ion-label>BVN</ion-label>
+        <ion-input type="text" formControlName="bvn"></ion-input>
+      </ion-item>  
+      <ion-item>
+        <ion-label></ion-label>
+        <ion-textarea formControlName="Address"></ion-textarea>
+      </ion-item>      
+       <button ion-button light full (click) ="finish()" >Continue</button>
+    </form>
+</ion-content>

@@ -1,0 +1,58 @@
+page-callpage {
+     background-color:#E7E6E3;
+.bluebg{background:#33B5E7;}
+.gt { background-image: url('../../www/assets/img/gt.png');}
+.fl{float:left;}
+/*initial..................................................initial before call .........................*/
+.top,.bottom, .middle{display:block; width:100%; padding:0px 30px; box-sizing:border-box;}
+.top{display:block; padding:10px;  z-index:2; height:33%; overflow:hidden; position:fixed; padding:0px!important; top:0px; left:0px; background:#33B5E7;  }
+/*top */
+.firstline,.middleline,.bottomline{width:100%; display:block; text-align:center; font-family:Open Sans;}
+.arrow{font-size:17px; margin-right:10px; margin-left:10px;line-height:30px; float:left;}
+.firstline{ font-size:30px; padding:10px 0px 0px 0px; overflow:hidden; padding-right:5px; color:#fff; line-height:35px; letter-spacing:1px;  white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis; }
+.middleline{ font-size:13px;  line-height:25px; color:rgba(255,255,255, 0.6);  }
+.bottomline{position:absolute; bottom:35px; padding-top:10px; height:42%; color:rgba(255,255,255, 0.6); font-size:30px; line-height:60px; }
+.bottomline .img{width:80px; background-color:#5C2684;vertical-align:bottom; overflow:hidden; display:inline-block; height:80px; padding:3px; box-sizing:border-box;  margin:0px 12px; background-size:contain; background-repeat:no-repeat;  background-position:center; border:solid 12px rgba(255,255,255, 0.3); border-radius:50%;   }
+.bottomline .i{width:60px; display:inline-block; vertical-align:bottom; height:60px; margin:10px 10px;  background-color:rgba(255,255,255, 0.3); color:rgba(255,255,255, 0.6); text-align:center; background-position:center;   border-radius:50%;   }
+.extra{background:#fff; color:#666;  border-bottom:solid 1px #ededed;text-align:left; width:100%; position:absolute; bottom:0px; font-family:Open Sans; height:30px; padding:0px 5px;  line-height:30px; font-size:12px; }
+/*top */
+.middle{ background-color:#E7E6E3; z-index:1; height:auto; box-sizing:border-box; min-height:77%; padding:5px 5px; top:33%; position:absolute; }
+/*middle */
+.item{width:100%; min-height:60px; border-bottom:#ededed; box-sizing:border-box; margin-bottom:7px; background-color:#fff; border-radius:3px;}
+.itemfirst, .itemsecond{ white-space: nowrap;  padding:10px; padding-bottom:0px!important;  overflow: hidden;  text-overflow: ellipsis; width:100%; box-sizing:border-box; width:100%; line-height:25px; font-size:18px; font-weight:600; color:#333; font-family:Open Sans; }
+.itemfirst .i {color:#d2d2d2; line-height:25px; font-size:23px; width:45px; }
+.itemsecond{font-size:12px;  padding-top:0px!important; padding-left:55px; color:#999; font-weight:400; line-height:14px; }
+.chatboxes{width:100%; margin-top:20px; border-top:solid 1px #d2d2d2; height:33px; line-height:35px;overflow:hidden; overflow:hidden; font-size:0px;  color:#d2d2d2;}
+.chatboxes div{width:33.3%; display:inline-block; text-align:center; font-size:12px;  }
+.chatboxes ion-icon{ margin-right:10px;}
+/*middle */
+.bottom{bottom:0px; overflow:hidden; border-top:solid 1px #ededed;  z-index:2; box-sizing:border-box; left:0px; font-size:0px; position:fixed; height:60px; overflow:hidden; background:#fff; padding:0px;}
+/*bottom */
+.bboxes{width:33.3%; overflow:hidden; box-sizing:border-box; height:100%; display:inline-block; padding:0px 10px; line-height:60px; font-family:Open sans; color:#fff; font-size:16px; white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis;}
+.bboxes .im{height:40px; overflow:hidden; text-align:center; display:block;  width:100%; line-height:40px; color:#33B5E7; font-size:30px; }
+.bboxes span{height:20px; overflow:hidden; text-align:center; display:block; color:#666;   width:100%; line-height:10px; font-size:14px;}
+.lb{border-left:solid 1px  #33B5E7;}
+
+
+/*bottom */
+/*..................................................initial before call .........................*/
+
+/*................................................call Process..................................*/
+.cover{width:100%; height:100%; display:fixed;  z-index:20; overflow:hidden; background:#33B5E7; font-family:Open Sans; color:#fff;}
+.identitydiv{display:block; width:100%; height:55%; position:absolute; top:0px;  }
+.calldiv{display:block; width:100%; height:45%; padding-top:30px;  position:absolute; bottom:0px;  }
+.titleholders{width:100%; height:35%; position:absolute; overflow:hidden; bottom:0px;}
+.title{font-size:33px; letter-spacing:1px;  color:#fff; display:block; line-height:40px; width:100%; text-align:center;  white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis; }
+.subtitle{font-size:15px; color:#fff; display:block; line-height:20px; font-family:Lato; margin-top:10px; width:100%; text-align:center; }
+.topdv{font-size:100px; width:100px; height:100px; line-height:100px; background-repeat:no-repeat; text-align:center; background-position:center; background-size:contain; background-color:#fff; border-radius:50%;  position:absolute; left:50%; top:30%; margin-left:-60px;  background-image: url('../../www/assets/img/gt.png'); } 
+.onebutton, .endbutton{font-size:40px;  box-sizing:content-box;   border:solid 8px rgba(255,255,255,0.5);  width:70px; height:70px; line-height:70px; color:#fff;  background-color:#3Cb371; text-align:center; background-position:center; background-size:contain;  border-radius:50%; } 
+.endbutton{background-color:#ff4d4d; }
+.central{text-align:center; margin:0px auto; display:block; }
+
+.double{text-align:center; margin:0 auto; margin-right:5px;  display:inline-block; }
+.callers{width:100%; height:auto; }
+.mleft{margin-left:27%!important; }
+/*................................................call Process..................................*/
+
+.white{color:#fff!important;}
+}

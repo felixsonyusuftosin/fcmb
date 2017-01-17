@@ -1,0 +1,62 @@
+<!--
+  Generated template for the BranchesList page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+
+  <ion-navbar class = "primary">
+   <!-- <ion-title>searchPageList</ion-title>-->
+   <ion-searchbar (input)="search($event)"></ion-searchbar>
+  </ion-navbar>
+</ion-header>
+    <ion-tabs   tabbarPlacement= 'bottom'>
+    <ion-tab tabIcon="contact"></ion-tab>
+    <ion-tab tabIcon="compass" ></ion-tab>
+    <ion-tab tabIcon="analytics"></ion-tab>
+    <ion-tab tabIcon="settings" ></ion-tab>
+  </ion-tabs>
+<ion-content>
+
+<div class="central blue">
+  <div class = "introshop ttp">
+<div class = "divcleft"><div class = "internal distribute"></div></div>
+<div class = "divcright">
+  <div class = "toptop zenithred"><i class = "gt spans"></i>&nbsp;FCMB NIGERIA</div>
+  <span class = "topbottom">Search by place in the search bar above, or scroll to select prefered branch </span>
+</div>
+
+  </div>
+  <div class = "bottomrules">
+   <div class ="noresult"  *ngIf = "noresult">
+    No result returned...
+  </div>
+  <div class = "box" *ngFor ="let item of dt.items" tappable  (click)="gotoBranchDetailsPage(item._id )">
+
+  <div class = "theimage"  data-id = "$item_id"  [style.background-image]="'url(' + item.imageurl + ')'|safe">
+    </div> 
+    <div class = "leftr">
+    <span class = "header">{{item.address}}</span>
+    <span class = "meters">{{item.distance}} KM Away</span>  
+    <span class = "body">ATM IS ACTIVE </span>
+   </div>
+ 
+ <!-- <div class = "rightr bluef">
+ <ion-icon name="chatboxes" class ="fl"></ion-icon>
+   <i class = "fa fa-map-marker fl fc"></i>
+  <ion-icon name="call" class ="fr"></ion-icon>
+  <span class = "stat">ATM IS ACTIVE</span>
+
+  </div>-->
+
+
+    
+    </div>
+   <!-- <div class = "box"></div><div class = "box"></div>
+    <div class = "box"></div><div class = "box"></div>
+    <div class = "box"></div><div class = "box"></div>-->
+  </div>
+</div>
+
+</ion-content>

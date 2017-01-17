@@ -1,0 +1,52 @@
+<!--
+  Generated template for the ServiceMenu page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>service-menu</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+
+<ion-content>
+<div class = "central">
+  <div class = "toptight">
+    <div class = "div fl gt"></div>
+    <div class = "div"><span class = "upper">100</span><span class = "lower">Branches</span></div>
+    <div class = "subdiv"><div class = "biticon atm"></div><div class = "bittext lgray"><span class = "upper">ATM</span><span class = "lower"></span></div></div>    
+    <div class = "subdiv fr"  (click) = "gotouserspage()"><div class = "biticon"><div class = "roundenew distribute"></div></div><div class = "bittext" ><span class = "upper">CHAT</span><span class = "lower">FORUM</span></div></div>
+    </div><!--toptight-->
+    <div class = "bodydiv" (click) = "gotoform()">
+      <div class = "fullheight column column60" >
+        <div class = "dvi"><div class = "transpfont">ACCOUNT OPENING</div></div>
+        <div class = "agreen largefont">Open a new FCMB Account</div>
+        <div class = "smallfont blackfont">Get access to revoltionary banking experience...</div>
+      </div>
+
+      <div class = "fullheight column column30 centralimg account"></div>
+      <div class = "fullheight column column10"><ion-icon class="agreen"   name = "arrow-dropright"></ion-icon></div>
+    </div><!--first bodydiv -->
+    <div class = "bodydiv purple" (click) = "gotobrancheslist()">
+      <div class = "fullheight column column90">
+         <div class = "dvi"><div class = "transpfont transpwhite">FCMB MOBILE FORUM</div></div>
+        <div class = "white largefont">Check nearest Banks or ATMS</div>
+        <div class = "rounde distribute"></div>
+      </div>
+      
+      <div class = "fullheight column column10"><ion-icon class="white"    name = "arrow-dropright"></ion-icon></div>
+    </div><!--second bodydiv -->
+    <div class = "bodydiv blue">
+      <div class = "fullheight column column60" (click) = "gotofacedetect()">
+           <div class = "dvi"><div class = "transpfont transpwhite">FCMB PAY</div></div>
+        <div class = "white largefont">Mobile Banking services..</div>
+           <div class = "smallfont white">click to get more...</div>
+      </div>
+      <div class = "fullheight column column40 centralimg atm2"></div>
+   
+    </div><!--third bodydiv -->
+  </div><!--central-->
+</ion-content>

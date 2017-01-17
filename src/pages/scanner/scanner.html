@@ -1,0 +1,64 @@
+<!--
+  Generated template for the Fcmbpay page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+ <!--<ion-header>
+
+ <ion-navbar>
+    <ion-title>fcmbpay</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+ 
+<ion-content>
+ 
+<ion-slides [options]="options" #slides>
+  
+<!---multiple form  for one page form-->
+<ion-slide class = "overall3">
+   <div class = "modal">
+    <div class = "headers bx"><div class = "col1 overflow fullheight bx fl" (click) = "closenav()"><ion-icon class = "fr" name = "arrow-round-back"></ion-icon></div><div class ="col5 fullheight lvl3">MAKE PAYMENT</div> </div>
+<div class = "pad">
+       <div class = "col10 midtext lvl2 tsp2 topbar"><i class= "col1 fa fa-circle green" ></i><i class= "col1 fa fa-circle  green"></i><i class= "col1 fa fa-circle yellow"></i></div> 
+    <div class = "row bbottom"><div class = "col10  lvl1 green midtext">Take A selfie</div><div class = "col10 lvl4 valign smlh gray1 midtext">Take a picture showing your face to initiate transaction</div></div>
+     <div class = "picturemode midtext" >
+       <span *ngIf = "frontpicture" [ngStyle]="{'background-image': 'url(' + base64Image + ')'}"></span>
+       <ion-icon  *ngIf = "!frontpicture" name = "person" class = "midtext ionicon"></ion-icon> 
+     </div>  
+     <div class = "fix">  
+     <div class = "col10 lvl2 padding lgray bbotom" *ngIf = "!frontpicture">Take a picture with the same expression when registering</div>
+      <div class = "col10 lvl2 padding lgray bbotom" *ngIf = "submiting">{{submittext}}</div>
+      </div>
+     <div class = "col10 padding lvl3 midtext" *ngIf = "frontpicture" >
+      <span class = "midtext btnlg" (click)="submit()" *ngIf = "!submiting">Submit</span>
+      <span class = "midtext btnlg"  *ngIf = "submiting">Submiting</span>
+     <ion-icon  *ngIf = "!submiting" name ="close" class = " close midtext btn"></ion-icon>
+     <span class = "midtext btn  bnn"  *ngIf = "submiting"><i class = "fa fa-circle-o-notch  fa-spin fa"  *ngIf = "submiting" ></i></span>
+     </div>
+      <div class = "fix2">  
+     <div class = "col10 lvl4 padding green bbottom bl "  *ngIf = "!submiting">Please take this picture under favorable optical conditions</div>
+     <div class = "col10 lvl4 padding bbottom bl "  *ngIf = "submiting">Authorizing with selfie...</div>
+     </div>
+   </div>
+    </div><!--modal-->
+<div class = "footer">
+  <div class = "row fullheight">
+  <div class = "col3 midtext transpdarkbg lvl2 footerthings valign " (click) = "takePicture()"><ion-icon name = "camera"></ion-icon></div>
+  <div class = "col7 midtext white lvl2 footerthings valign overflow">Next</div>
+  </div>
+  </div><!--div footer-->
+</ion-slide>
+<ion-slide class = "overall3">
+   <div class = "modal">
+    </div><!--modal-->
+<div class = "footer">
+  <div class = "row fullheight">
+  <div class = "col3 midtext transpdarkbg lvl2 footerthings valign "><ion-icon name = "ribbon"></ion-icon></div>
+  <div class = "col7 midtext white lvl2 footerthings valign overflow"  (click) = "closenavparam()">Close</div>
+  </div>
+  </div><!--div footer-->
+</ion-slide>
+</ion-slides>
+</ion-content>

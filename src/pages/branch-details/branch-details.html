@@ -1,0 +1,68 @@
+<!--
+  Generated template for the BranchDetails page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar  *ngFor ="let t of item">
+  <ion-title>{{t.address}} Branch</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  class = "graybg"  *ngFor ="let it of item">
+<ion-slides class = "slidehold" [options]="slideOptions" > 
+  <ion-slide>
+   <!-- <img [src]="sanitize(it.imageurl)"/> -->   
+   <div class="dom" [style.background-image]="'url(' +it.imageurl+')'|safe"></div>
+  </ion-slide>
+ 
+  <ion-slide>
+   <!-- <img [src]="sanitize(it.imageurl2)" />-->
+   <div class="dom" [style.background-image]="'url(' +it.imageurl2+')'|safe"></div>
+  </ion-slide>
+ 
+  <ion-slide>
+    <!--<img [src]="sanitize(it.imageurl4)" />-->
+    <div class="dom" [style.background-image]="'url(' +it.imageurl4+')'|safe"></div>
+  </ion-slide>  
+</ion-slides>
+<div class = "botb">
+  <div class = "largebox">
+   <div class = "headerline">{{it.address}} Branch</div><div class = "headerfloat"><div class = "roundnew distribute"></div><span class = "chat">CHAT</span></div>
+   <span class = "bodyline">{{it.geoaddress}}
+     <br/>
+     {{it.distance}} KM to your current location
+   </span>
+ 
+  </div>
+  <div class = "smallbox">
+    <div class = "digits"><div>{{it.distance}}</div>
+    <span>KM Away</span>
+    </div>
+    <div class = "wordings">
+      <span (click) = "gotomappage()"><ion-icon name = "compass"  class = "i"></ion-icon>&nbsp; View on Map</span>
+      <span><ion-icon  name = "globe" class = " i"></ion-icon>&nbsp;Closes by 5:00PM</span>
+    </div>
+  </div>
+ 
+    <div class = "largebox nomargin">
+      <div class = "services head">Services</div>
+      <div class = "services"><ion-icon  name = "alarm" ></ion-icon><span class = "fl">Opening Time</span><span class = "fr">8:00 AM</span></div>
+      <div class = "services"><ion-icon  name = "alarm" ></ion-icon><span class = "fl">Closing Time</span><span class = "fr">5:00 PM</span></div>
+      <div class = "services"><ion-icon  name = "alarm" ></ion-icon><span class = "fl">Opens Weekend</span><span class = "fr">9:00AM</span></div>
+      <div class = "services"><ion-icon  name = "alarm" ></ion-icon><span class = "fl">Closes Weekend</span><span class = "fr">1:00 PM</span></div>
+      <div class = "services"><ion-icon  name = "call"></ion-icon><span class = "fl">Telephone Number</span><span class = "fr">{{it.phone}}</span></div>
+    </div>
+    <div class = "bluebox" (click) = "begincall()"><ion-icon  name = "call"  class = "ca" ></ion-icon>Call this branch</div>
+     <div class = "whitebox" (click) = "gotoform()"><div class = "gt subdiv"></div> Open a FCMB Account</div>
+</div>
+
+</ion-content>
+
+
+           <!-- <div class="rom" [style.background-image]="'url(' +it.imageurl+')'|safe"  (click) = "fillitup(it.imageurl)"></div>
+            <div class="rom" [style.background-image]="'url(' +it.imageurl2+ ')'|safe" (click) = "fillitup(it.imageurl2)"> ></div>
+           <div class="rom" [style.background-image]="'url(' +it.imageurl3+ ')'|safe" ></div>
+            <div class="rom " [style.background-image]="'url(' +it.imageurl4+ ')'|safe" (click) = "fillitup(it.imageurl4)">></div>-->

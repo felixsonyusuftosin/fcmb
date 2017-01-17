@@ -1,0 +1,66 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--<ion-header>
+
+  <ion-navbar>
+    <ion-title>homePage</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+
+
+<ion-content>
+<div class = "bg">  
+   <div class = "cover">
+  <div class = "central">    
+  <div class = "first-line">
+ FCMB CONNECT APP
+   </div><!--first-line-->
+<div class = "second-line">
+  <span></span>
+</div><!--second-line-->
+<div class = "third-line">
+  FCMB Nigeria ...
+</div><!--third-line-->
+  <div class = "bottom-intro" *ngIf = "! dt.loaded && !dt.error">
+    <i class = "icons fa fa-circle active"></i>
+    <i class = "icons fa fa-circle"></i>
+    <i class = "icons fa fa-circle"></i>
+    <div  class = "pleasewait">      
+      <div class = "i"><i class = "fa fa-circle-o-notch fa-spin  fa-fw"></i></div>
+      <span>Please wait while we setup ur device..</span>
+    </div>      
+  </div><!--bottom-intro-->
+  <div class = "bottom-intro" *ngIf = "dt.loaded && !dt.error">
+    <i class = "icons fa fa-circle "></i>
+    <i class = "icons fa fa-circle active"></i>
+    <i class = "icons fa fa-circle"></i>
+    <div  class = "pleasewait">   
+         <div class = "i"><i class = "fa fa-download"></i></div>
+      <span>Your device is set up..</span>
+      <div class = "button" (click) = "servicemenu()" >GO <ion-icon name = "log-in"></ion-icon></div>
+    </div>     
+  </div><!--bottom-intro-->
+    <div class = "bottom-intro" *ngIf = "dt.error">
+    <i class = "icons fa fa-circle "></i>
+    <i class = "icons fa fa-circle"></i>
+    <i class = "icons fa fa-circle active"></i>    
+    <div  class = "pleasewait">  
+      <div class = "i" (click) = dt.getseconddoc()><i class = "fa fa-refresh warning"></i></div>  
+      <span>Please check your internet settings...<br/>Click Icon to refresh</span>
+    </div>    
+  </div><!--bottom-intro-->
+  </div><!--central-->
+  </div><!--cover-->  
+  </div><!--bg-->
+</ion-content>
+
+
+
+
+
+

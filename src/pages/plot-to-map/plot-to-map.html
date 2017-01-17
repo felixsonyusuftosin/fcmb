@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar>
+       <!-- <button menuToggle *ngIf="!selectedItem">
+                <ion-icon name="menu"></ion-icon>
+        </button>-->
+        <ion-title>Item Details</ion-title>
+    </ion-navbar>
+</ion-header>
+
+    <div class = "topmap" *ngIf = "active">
+        <div class = "seperators right-borderbox">
+            <div class = "septop">Total driving distance</div>
+             <div class = "sepmid">{{mapobj.distance}}</div>
+              <div class = "sepbottom">KM to  yourlocation</div>
+        </div>
+        <div class = "seperators">
+            <div class = "septop">Total driving time</div>
+             <div class = "sepmid">{{mapobj.time}}</div>
+              <div class = "sepbottom">Minutes Away</div> 
+        </div>
+        <div class = "straight">Actual distance is &nbsp;{{(distance/10)}}&nbsp;&nbsp;KM To you</div>
+    </div>
+   <!-- <div class = "routing" *ngIf = "!active"  tappable  (click) = "showroutes()"><i class = "rondedrouting fa fa-road" ></i><div class = "routingdiv">Click to show routes</div></div>-->
+        <div id="map" class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim map" tabindex="0"></div>
+        <div class = "mapdetails" *ngIf = "results" >
+        <div  class = "substi" *ngFor ="let it of item">
+        <span class = "tophead truncate">{{it.address}}</span>
+        <div class = "imagedisplay"  [style.background-image]="'url(' +frontpage+ ')'|safe"  ></div>
+        <div class = "displays">
+              <div class="rom" [style.background-image]="'url(' +it.imageurl+')'|safe"  tappable  (click) = "fillitup(it.imageurl)"></div>
+            <div class="rom" [style.background-image]="'url(' +it.imageurl2+ ')'|safe" tappable  (click) = "fillitup(it.imageurl2)"> ></div>
+        <div class="rom" [style.background-image]="'url(' +it.imageurl2+ ')'|safe" tappable  (click) = "fillitup(it.imageurl4)"> ></div>
+        </div>
+        <div class = "displays"><i class = "fa fa-map-marker  left"></i><span class = "mid">{{(it.distance/100).toFixed(2)}} KM To yur Location</span></div>
+        <div class = "displays lemon"><i class = "fa fa-bank  left"></i><div class = "mid">ATM is Active</div><div class = "right"><i class = "fa fa-thumbs-up"></i></div></div>
+        <div class = "call" tappable  (click) = "callIT(it.phone)"><i class = "fa fa-phone"></i>&nbsp;&nbsp;Call this branch</div>
+         </div>
+        </div>
+        <div class = "bottommap">
+           <div class = "seperatorsbot right-borderbox" tappable  (click) = "showroutes()"><i class = "si fa fa-road"></i><span class = "sl">Route</span></div>
+            <div class = "seperatorsbot right-borderbox" tappable  (click) = "removeroutes()"><i class = "si fa fa-close"></i><span class = "sl">clear</span></div>
+             <div class = "seperatorsbot" tappable  (click) =  "toggleresults()"><i class = "si fa fa-bars"></i><span class = "sl">Others</span></div>
+        </div>
+

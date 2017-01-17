@@ -1,0 +1,67 @@
+ 
+<ion-content>
+  <div class = "headers bx">
+    <div class = "col1 overflow fullheight bx" (click) = "closenav()">
+      <ion-icon class = "fr" name = "arrow-round-back"></ion-icon>
+      </div>
+      <div class ="col5 fullheight lvl3">GENERATE INVOICE</div>
+       </div>
+
+<ion-slides [options]="options" #slides>  
+   
+<!---multiple form  for one page form-->
+<ion-slide class = "overall">
+  <div class = "col10 midtext lvl2 tsp topbar"><i class= "col1 fa fa-circle white"></i><i class= "col1 fa fa-circle"></i><i class= "col1 fa fa-circle"></i></div> 
+  <div class = "modal">
+    <div class = "row"><div class = "col10 lvl1 white midtext">Generate Invoice</div><div class = "col10 lvl4 valign smlh midtext">Encode your transaction invoice with QR Code</div></div>
+  <div class = "helphold lvl3">Total Price</div>
+  <div class = "inputhold"><input type= "text" [(ngModel)] = "price" (change) = "checknext()" pattern = "[0-9]*"  inputmode = "numeric"  class = "midtext"  ></div>
+    <div class = "error" *ngIf = "errorprice">{{errorpricetxt}}</div>
+   <p class = "lvl3 white col-8 midtext">Type in the intended value of transaction that will be completed by the second party</p>
+    <div class = "error marginsmall" *ngIf = "finalerror">{{finalerrortxt}}</div>
+  </div><!--modal-->
+
+<div class = "footer">
+  <div class = "row fullheight">   
+ <div class = "col3 midtext transpdarkbg lvl2 footerthings valign" ><ion-icon name ="reversecamera"></ion-icon></div> 
+
+  <!-- production/ -->
+  <div class = "col7 midtext white lvl2 footerthings valign overflow"  *ngIf = "nocost"><span [ngClass] = "{'disabled':disabled}">GENERATE</span></div>
+  <div class = "col7 midtext white lvl2 footerthings valign overflow"  *ngIf = "!nocost"><span [ngClass] = "{'disabled':disabled}" (click) = "gotopbar()">GENERATE</span></div>
+<!--  / production block-->
+ <!--development pls delete on production->
+   <div class = "col7 midtext white lvl2 footerthings valign overflow" ><span (click) = "gotopicture()">Next</span></div>
+/development plss delet on production -->
+  </div>
+  </div><!--div footer-->
+</ion-slide>
+<ion-slide class = "overall3">
+    <div class = "col10 midtext lvl2 tsp2 topbar"><i class= "col1 fa fa-circle green" ></i><i class= "col1 fa fa-circle  yellow"></i><i class= "col1 fa fa-circle green"></i></div> 
+  <div class = "modal">
+    <div class = "row bbottom">
+    <div class = "col10  lvl1 green midtext">Generated QR code </div>
+    <div class = "col10 lvl3 valign smlh gray1 midtext pric">Recieve payment of <b>{{price}} Naira</b></div>
+    </div>
+     <div class = "picturemode midtext" >
+       <div class = "qrcode">
+         <!--<img src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100" alt="" title="" />-->
+         <img [src] = "pic" alt = ""  title = ""/>
+         <!--<qrcode [qrdata]="'price'" [size]="140" [level]="'M'"></qrcode>-->
+         </div>      
+     </div>    
+ <p class = "tb lvl1 green">Confirm your transaction...</p>
+
+    </div><!--modal-->
+<div class = "footer">
+  <div class = "row fullheight">
+  <div class = "col3 midtext transpdarkbg lvl2 footerthings valign " (click) = "gotocbar()"><ion-icon name = "arrow-back"></ion-icon>&nbsp;Recost</div>
+  <div class = "col7 midtext white lvl2 footerthings valign overflow"  [ngClass] ="{'disabled':paystatboo}">{{paystat}}</div>
+  </div>
+  </div><!--div footer-->
+ 
+</ion-slide>
+<ion-slide class = "overall3">
+
+</ion-slide>
+</ion-slides>
+</ion-content>
