@@ -35,7 +35,13 @@ callee:any;
 caller:any;
 contact:any;
 
-username:string
+username:string;
+acceptreciever:boolean = false;
+rejectreciever:boolean = false;
+scanningreciever:boolean = false;
+acceptuser:boolean = false;
+rejectuser:boolean = false;
+confirmationuser:boolean;
 callInProgress:boolean;
 callIgnored:boolean;
 callEnded:boolean;
@@ -87,6 +93,22 @@ console.log(this.phone);
    }
 
  } 
+ scansuccess(thisid, peer_id){
+  this.acceptuser = false; this.rejectuser = false; this.confirmationuser = true;
+   this.socket.emit('pay', {id: peer_id,thisid, message:'scansuccess'});
+ }
+acceptedpay(thisid, peer_id){
+  this.acceptuser = true; this.rejectuser = false; this.confirmationuser = false;
+   this.socket.emit('pay', {id: peer_id,thisid, message:'accepted'});
+ }
+rejectedpay(thisid, peer_id){
+  this.acceptuser = false; this.rejectuser = true; this.confirmationuser = false;
+   this.socket.emit('pay', {id: peer_id,thisid, message:'rejected'});
+ }
+ emittransact(obj){
+ ;
+   this.event.publish('mobilepay', obj)
+ }
  initialize2(peer_phone){
   this.peer_phone = peer_phone;
   this.peer_id = peer_phone;
@@ -271,6 +293,25 @@ onMessageReceive(message, th){
   //let call = new Call(this.app);
   let ev:Events = th.event;
   switch (message.type){
+    case 'scansuccess':
+    th.acceptreciever = false;
+    th.rejectreciever = false;
+    th.scanningreciever = true;
+    let obj = {acceptreciever:th.acceptreciever,rejectreciever:th.rejectreciever, scanningreciever:th.scanningreciever}
+    th.emittransact(obj)
+    case 'accepted':
+    th.acceptreciever = true;
+    th.rejectreciever = false;
+    th.scanningreciever = false;
+    let obj2 = {acceptreciever:th.acceptreciever,rejectreciever:th.rejectreciever, scanningreciever:th.scanningreciever}
+    th.emittransact(obj2)
+     case 'rejected':
+    th.acceptreciever = false;
+    th.rejectreciever = true;
+    th.scanningreciever = false;
+    let obj3 = {acceptreciever:th.acceptreciever,rejectreciever:th.rejectreciever, scanningreciever:th.scanningreciever}
+    th.emittransact(obj3) 
+
     case 'answer':
     th.callInProgress = true;
     th.isDialling = false;

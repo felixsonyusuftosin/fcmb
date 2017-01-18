@@ -36,11 +36,11 @@
   </div><!--div footer-->
 </ion-slide>
 <ion-slide class = "overall3">
-    <div class = "col10 midtext lvl2 tsp2 topbar"><i class= "col1 fa fa-circle green" ></i><i class= "col1 fa fa-circle  yellow"></i><i class= "col1 fa fa-circle green"></i></div> 
+    <div class = "col10 midtext lvl2 tsp2 topbar"><i class= "col1 fa fa-circle green" ></i><i class= "col1 fa fa-circle  green"></i><i class= "col1 fa fa-circle green"></i></div> 
   <div class = "modal">
     <div class = "row bbottom">
     <div class = "col10  lvl1 green midtext">Generated QR code </div>
-    <div class = "col10 lvl3 valign smlh gray1 midtext pric">Recieve payment of <b>{{price}} Naira</b></div>
+    <div class = "col10 lvl3 valign smlh gray1 midtext pric text" >Recieve payment of <b>{{price}} Naira</b></div>
     </div>
      <div class = "picturemode midtext" >
        <div class = "qrcode">
@@ -49,8 +49,11 @@
          <!--<qrcode [qrdata]="'price'" [size]="140" [level]="'M'"></qrcode>-->
          </div>      
      </div>    
- <p class = "tb lvl1 green">Confirm your transaction...</p>
-
+ <p class = "tb lvl11 green">Confirm your transaction...</p>
+     <div class = "detailshold">
+       <div class = "roll"><i class = "fa fa-spin fa-circle-o-notch fa-spin"></i></div>
+       <div class = "template lvl3">User is authenticating transaction</div>
+     </div>
     </div><!--modal-->
 <div class = "footer">
   <div class = "row fullheight">

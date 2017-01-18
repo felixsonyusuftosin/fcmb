@@ -40,7 +40,7 @@ export class Data {
     this.username = "ascaultsibledifeammoster";
     this.password = "580bd4a02d7a6999689ab1fb3b20f0784309992c";
     this.remote = 'https://siberobinsion.cloudant.com/branchesfcmb';  
-   this.options = { live: true, retry: true,  attachments:true,  auth: { username: this.username, password: this.password }
+   this.options = { retry: true,  attachments:true,  auth: { username: this.username, password: this.password }
     };
      
   }

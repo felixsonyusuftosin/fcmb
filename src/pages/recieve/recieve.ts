@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Slides } from 'ionic-angular';
 import { DomSanitizer} from '@angular/platform-browser';
 import {FacedetectPage} from '../facedetect/facedetect';
+import {Events} from 'ionic-angular';
+import {SocketService} from '../../services/socket-service';
 declare var require: any;
 
 /*
@@ -36,7 +38,7 @@ export class RecievePage {
     finalerror:boolean = false;
     finalerrortxt:string;
 
-  constructor(public navCtrl: NavController,  navParams: NavParams,private sanitizer: DomSanitizer ) {
+  constructor(public navCtrl: NavController, public ss:SocketService, public event:Events, navParams: NavParams,private sanitizer: DomSanitizer ) {
     this.account =  navParams.get('account');
   }
    reset(){
@@ -70,6 +72,11 @@ export class RecievePage {
   ionViewDidLoad() {
     console.log('Hello RecievePage Page');
     this.reset();
+    this.event.subscribe('mobilepay', (obj)=>{      
+      let objo = obj;
+    //let profileModal = this.ModalCrl.create(CallpagePage,objo);
+     //profileModal.present();
+    });
   }
 closenav(){
   this.navCtrl.pop();

@@ -4,6 +4,7 @@ import { Slides } from 'ionic-angular';
 import {Camera} from 'ionic-native';
 import {FacedetectPage} from '../facedetect/facedetect';
 import {Http, Headers, RequestOptions} from '@angular/http';
+import {SocketService} from '../../services/socket-service';
 /*
   Generated class for the Scanner page.
 
@@ -29,7 +30,7 @@ export class ScannerPage {
     };
     swiper: any;
 
-  constructor(public navCtrl: NavController,private http:Http, navParams: NavParams) {
+  constructor(public navCtrl: NavController,public ss:SocketService, private http:Http, navParams: NavParams) {
     this.account =  navParams.get('account');
   }
 

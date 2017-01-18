@@ -18,8 +18,9 @@ input{height:50px; text-indent:10px; line-height:50px; font-size:25px; font-weig
 /*text*/
 .open-sans{font-family:Open Sans;}
 .Lato{font-family:Lato;}
-.lvl1,.lvl2,.lvl3,.lvl4{font-family:Open Sans; font-size:25px;  line-height:30px; letter-spacing:2px; word-spacing:3px; color:#fff; }
+.lvl1,.lvl2,.lvl3,.lvl4, .lvl11{font-family:Open Sans; font-size:25px;  line-height:30px; letter-spacing:2px; word-spacing:3px; color:#fff; }
 .lvl2{letter-spacing:1px; line-height:20px; font-size:15px; text-transform:uppercase; word-spacing:2px; }
+.lvl11{font-size:13px; }
 .lvl3{letter-spacing:0px; font-weight:700;  line-height:20px;  font-size:14px; word-spacing:default; color:rgba(255,255,255,0.6);}
 .lvl4{letter-spacing:0px; line-height:20px; word-spacing:0px; color:rgba(255,255,255,0.7); font-size:9px;}
 .transp{color:rgba(255,255,255,0.6); text-transform:capitalize; } .transpdarkbg{background:rgba(255,255,255,0.2);}
@@ -65,7 +66,7 @@ input{height:50px; text-indent:10px; line-height:50px; font-size:25px; font-weig
 .modal{width:100%; height:75%;  box-sizing:border-box; padding:7px 9px; padding-top:15px; overflow:hidden; padding:10px; box-sizing:border-box;  vertical-align:top;}
 .picturemode div{width:100%; height:100%;}
 
-.picturemode{ margin-top:5px; height:140px; width:140px; text-align:center; display:block;  background:#fff; font-size:100px;  color:#fff; }
+.picturemode{ margin-top:5px; height:140px; width:100%; text-align:center; display:block;  background:#fff; font-size:100px;  color:#fff; }
 .shadow{width:100%; height:100%; line-height:60px; font-size:29px; text-align:center; color:orangered; background:rgba(0,0,0,0.3);}
 .picturemode .ionicon, .picturemode span{width:140px; background:#d2d2d2; box-shadow:0 2px 2px -5px rgba(0,0,0,0.4);  height:140px; line-height:140px;   border-radius:50%;  }
  .picturemode span{background-size:cover; background-repeat:no-repeat; display:inline-block;}
@@ -82,7 +83,10 @@ input{height:50px; text-indent:10px; line-height:50px; font-size:25px; font-weig
 /*.picturemode img{margin:auto 0!important; width:100px; height:100px; margin-left:50%;}*/
 .qrcode{ height:250px; padding:20px 30px;  width:100%!important;  }
 .qrcode img, img{margin: 0 auto; display:block; }
+.text{height:40px; padding-top:15px; box-sizing:border-box;  }
 
-
+.detailshold{width:100%; height:170px;  font-family:Open sans; padding:10px 20px; overflow:hidden; text-align:center;    }
+.roll{height:120px; text-align:center; font-size:80px;  line-height:117px; color:#d2d2d2;  display:block; }
+.template{height:30px; line-height:30px; color:#666; }
 
 }
