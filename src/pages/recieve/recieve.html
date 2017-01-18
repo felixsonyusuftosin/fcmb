@@ -38,21 +38,40 @@
 <ion-slide class = "overall3">
     <div class = "col10 midtext lvl2 tsp2 topbar"><i class= "col1 fa fa-circle green" ></i><i class= "col1 fa fa-circle  green"></i><i class= "col1 fa fa-circle green"></i></div> 
   <div class = "modal">
-    <div class = "row bbottom">
+    <div class = "row bbottom" *ngIf = "! objo.acceptreciever &amp;&amp; ! objo.rejectreciever">
     <div class = "col10  lvl1 green midtext">Generated QR code </div>
     <div class = "col10 lvl3 valign smlh gray1 midtext pric text" >Recieve payment of <b>{{price}} Naira</b></div>
+    </div>   
+      <div class = "row bbottom"  *ngIf = "!objo.acceptreciever &amp;&amp; objo.rejectreciever ">
+    <div class = "col10  lvl1 green midtext">Failed Transaction </div>
+    <div class = "col10 lvl3 valign smlh gray1 midtext pric text" ><b>User Ended Transaction</b></div>
     </div>
+    <div class = "row bbottom" *ngIf = "objo.acceptreciever &amp;&amp; !objo.rejectreciever ">
+    <div class = "col10  lvl1 green midtext">Success </div>
+    <div class = "col10 lvl3 valign smlh gray1 midtext pric text"><b>Transaction Completed</b></div>
+    </div>
+
+
      <div class = "picturemode midtext" >
        <div class = "qrcode">
          <!--<img src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100" alt="" title="" />-->
-         <img [src] = "pic" alt = ""  title = ""/>
+         <img *ngIf = "!objo.acceptreciever" [src] = "pic" alt = ""  title = ""/>
+         <i   *ngIf = "objo.acceptreciever" class =  "fa fa-spin fa-check-circle gn"></i>
          <!--<qrcode [qrdata]="'price'" [size]="140" [level]="'M'"></qrcode>-->
          </div>      
      </div>    
  <p class = "tb lvl11 green">Confirm your transaction...</p>
-     <div class = "detailshold">
-       <div class = "roll"><i class = "fa fa-spin fa-circle-o-notch fa-spin"></i></div>
+     <div class = "detailshold" *ngIf = "objo.scanningreciever">
+       <div class = "roll" ><i class = "fa fa-spin fa-circle-o-notch fa-spin"></i></div>
        <div class = "template lvl3">User is authenticating transaction</div>
+     </div>
+      <div class = "detailshold" *ngIf = "objo.acceptreciever">
+       <div class = "roll" ><i class = "fa fa-spin fa-warning yellow"></i></div>
+       <div class = "template lvl3">Authenticated user {{price}} Naira was paid </div>
+     </div>
+    <div class = "detailshold" *ngIf = "objo.rejectreciever">
+       <div class = "roll" ><i class = "fa fa-spin fa-check-circle gn"></i></div>
+       <div class = "template lvl3">Could not complete transaction please retry</div>
      </div>
     </div><!--modal-->
 <div class = "footer">

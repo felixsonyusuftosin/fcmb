@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Slides } from 'ionic-angular';
+import { BarcodeScanner } from 'ionic-native';
 import {Camera} from 'ionic-native';
 import {FacedetectPage} from '../facedetect/facedetect';
 import {Http, Headers, RequestOptions} from '@angular/http';
@@ -24,13 +25,16 @@ export class ScannerPage {
   pin:number;
   imagedata:any;
   submittext:string;
+  scandata:any;
+  peer_id:any;
+  scannedval:boolean = false;
   public options: any = {
       onInit: (slides: any) => { this.swiper = slides; },
       onlyExternal:true
     };
     swiper: any;
 
-  constructor(public navCtrl: NavController,public ss:SocketService, private http:Http, navParams: NavParams) {
+  constructor(public navCtrl: NavController,public ss:SocketService,  private http:Http, navParams: NavParams) {
     this.account =  navParams.get('account');
   }
 
@@ -54,6 +58,30 @@ closenav(){
   }
   closenavparam(){
   this.navCtrl.push(FacedetectPage, {account:this.account})
+}
+scan(){
+BarcodeScanner.scan().then((barcodeData) => {
+    let tscandata = barcodeData.data.split("-");
+    this.scandata  = tscandata(0);
+    this.peer_id = tscandata(1);
+    this.scannedval = true;
+    let phone = this.ss.id;
+     this.ss.scansuccess(phone, this.peer_id);
+ // Success! Barcode data is here
+}, (err) => {
+    console.log(err);
+    this.scannedval = false;
+});
+
+}
+confirm(){
+ let phone = this.ss.id;
+ this.ss.acceptedpay(phone, this.peer_id); 
+
+}
+reject(){
+  let phone = this.ss.id;
+ this.ss.rejectedpay(phone, this.peer_id);  
 }
 takePicture(){
     let th = this;

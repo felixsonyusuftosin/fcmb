@@ -25,8 +25,9 @@ export class RecievePage {
       onlyExternal:true
     };
     swiper: any;
-    price:number;
+    price:number = 0;
     tag:any;
+    objo:any = {acceptreciever:false,rejectreciever:false, scanningreciever:false};
     pic:any;
     errorprice:boolean = false;
     errorpricetxt:string;
@@ -56,13 +57,15 @@ export class RecievePage {
       this.errorpricetxt = "";
       this.disabled = false;
       this.nocost = false;
-      let picd = "https://api.qrserver.com/v1/create-qr-code/?data="+this.price+"&amp;size=100x100";
+      let phone = this.ss.id
+      let picd = "https://api.qrserver.com/v1/create-qr-code/?data="+this.price+"-"+phone +"&amp;size=100x100";
       this.pic = this.sanitizer.bypassSecurityTrustUrl(picd);
      
    
       return true;
       }
    }
+
    gotopbar(){
      this.swiper.slideTo(1, 500);
    }
@@ -70,10 +73,11 @@ export class RecievePage {
      this.swiper.slideTo(0, 500);
    }
   ionViewDidLoad() {
+    let th = this;
     console.log('Hello RecievePage Page');
     this.reset();
     this.event.subscribe('mobilepay', (obj)=>{      
-      let objo = obj;
+      th.objo = obj;
     //let profileModal = this.ModalCrl.create(CallpagePage,objo);
      //profileModal.present();
     });

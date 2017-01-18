@@ -51,12 +51,37 @@
   </div><!--div footer-->
 </ion-slide>
 <ion-slide class = "overall3">
-   <div class = "modal">
+  <div class = "modal">
+  <div class = "headers bx"><div class = "col1 overflow fullheight bx fl" (click) = "closenav()"><ion-icon class = "fr" name = "arrow-round-back"></ion-icon></div><div class ="col5 fullheight lvl3">MAKE PAYMENT</div> </div>
+<div class = "pad">
+       <div class = "col10 midtext lvl2 tsp2 topbar"><i class= "col1 fa fa-circle green" ></i><i class= "col1 fa fa-circle  green"></i><i class= "col1 fa fa-circle yellow"></i></div> 
+    <div class = "row bbottom"><div class = "col10  lvl1 green midtext">Scan TO PAy</div><div class = "col10 lvl4 valign smlh gray1 midtext">Scan a QR Code to initiate transaction</div></div>
+     <div class = "picturemode midtext" >      
+       <ion-icon   name = "qr-scanner" class = "midtext ionicon"></ion-icon> 
+     </div>  
+     <div class = "fix">  
+     <div class = "col10 lvl2 padding lgray bbotom " *ngIf = "!scannedval" >Scan a pregenerated QR code user must use FCMB App or web platform</div>
+ <div class = "col10 lvl2 padding lgray bbotom " *ngIf = "scannedval  &amp;&amp; !ss.acceptuser &amp;&amp; !ss.rejectuser" >Confirm  Payment of {{scandata}} Naira</div>
+ <div class = "col10 lvl2 padding lgray bbotom " *ngIf = "ss.acceptuser &amp;&amp; !ss.rejectuser" >Payment of {{scandata}} Naira Successful</div>
+ <div class = "col10 lvl2 padding lgray bbotom " *ngIf = "!ss.acceptuser &amp;&amp; ss.rejectuser" >You ended transaction</div>
+      </div>
+     <div class = "col10 padding lvl3 midtext" *ngIf = "frontpicture" >
+      <span class = "midtext btnlg" (click)="scan()" *ngIf = "!ss.acceptuser &amp;&amp; !ss.rejectuser">Scan</span>
+      <span class = "midtext btnlg" (click)="confirm()" *ngIf = "ss.scannedval">Confirm</span>
+      <span class = "midtext btnlg" (click)="reject()" *ngIf = "ss.scannedval">Reject</span>
+      <span class = "midtext btnlg"  *ngIf = "ss.confirmationuser">Scanning</span>
+     </div>
+      <div class = "fix2">  
+     <div class = "col10 lvl4 padding bbottom bl " *ngIf = "scannedval  &amp;&amp; !ss.acceptuser &amp;&amp; !ss.rejectuser">Confirm  Payment of {{scandata}} Naira</div>
+     <div class = "col10 lvl4 padding bbottom bl " *ngIf = "ss.acceptuser &amp;&amp; !ss.rejectuser">Payment of {{scandata}} Naira Successful</div>
+      <div class = "col10 lvl4 padding bbottom bl "  *ngIf = "!ss.acceptuser &amp;&amp; ss.rejectuser">You ended transaction</div>
+     </div>
+   </div>
     </div><!--modal-->
 <div class = "footer">
   <div class = "row fullheight">
-  <div class = "col3 midtext transpdarkbg lvl2 footerthings valign "><ion-icon name = "ribbon"></ion-icon></div>
-  <div class = "col7 midtext white lvl2 footerthings valign overflow"  (click) = "closenavparam()">Close</div>
+  <div class = "col3 midtext transpdarkbg lvl2 footerthings valign " (click) = "scan()"><ion-icon name = "camera"></ion-icon></div>
+  <div class = "col7 midtext white lvl2 footerthings valign overflow">Finish</div>
   </div>
   </div><!--div footer-->
 </ion-slide>
