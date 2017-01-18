@@ -26,6 +26,7 @@ export class ScannerPage {
   imagedata:any;
   submittext:string;
   scandata:any;
+  scanended:boolean = true;
   peer_id:any;
   scannedval:boolean = false;
   public options: any = {
@@ -60,16 +61,23 @@ closenav(){
   this.navCtrl.push(FacedetectPage, {account:this.account})
 }
 scan(){
+  this.scanended = false;
 BarcodeScanner.scan().then((barcodeData) => {
-    let tscandata = barcodeData.data.split("-");
-    this.scandata  = tscandata(0);
-    this.peer_id = tscandata(1);
+    this.scanended = true;
+    console.log(barcodeData)
+    let tscandata:any[] = [];
+     tscandata = barcodeData.text.split("-");
+    this.scandata  = tscandata[0];
+    this.peer_id = tscandata[1];
     this.scannedval = true;
-    let phone = this.ss.id;
-     this.ss.scansuccess(phone, this.peer_id);
+    let phone = this.ss.phone;
+    console.log(phone)
+        console.log('phone')
+     this.ss.scansuccess(phone, tscandata[1]);
  // Success! Barcode data is here
 }, (err) => {
     console.log(err);
+    this.scanended = false;
     this.scannedval = false;
 });
 
@@ -139,7 +147,7 @@ dosuccess(data){
     } 
   }
   else{
-     this.submittext= "Your face was not recognized, Redeem imge if you feel this was in error"
+     this.submittext= "Your face was not recognized, Redeem image if you feel this was in error"
      this.frontpicture = false;
      console.log(data.reason);
   }

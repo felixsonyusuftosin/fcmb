@@ -61,27 +61,27 @@
      </div>  
      <div class = "fix">  
      <div class = "col10 lvl2 padding lgray bbotom " *ngIf = "!scannedval" >Scan a pregenerated QR code user must use FCMB App or web platform</div>
- <div class = "col10 lvl2 padding lgray bbotom " *ngIf = "scannedval  &amp;&amp; !ss.acceptuser &amp;&amp; !ss.rejectuser" >Confirm  Payment of {{scandata}} Naira</div>
- <div class = "col10 lvl2 padding lgray bbotom " *ngIf = "ss.acceptuser &amp;&amp; !ss.rejectuser" >Payment of {{scandata}} Naira Successful</div>
- <div class = "col10 lvl2 padding lgray bbotom " *ngIf = "!ss.acceptuser &amp;&amp; ss.rejectuser" >You ended transaction</div>
+ <div class = "col10 lvl2 padding lgray bbotom " *ngIf = "scannedval &amp;&amp; !ss.rejectuser &amp;&amp; !ss.acceptuser  ">Confirm  Payment of {{scandata}} Naira</div>
+ <div class = "col10 lvl2 padding lgray bbotom " *ngIf = "ss.acceptuser" >Success transaction of {{scandata}} Naira went through</div>
+ <div class = "col10 lvl2 padding lgray bbotom " *ngIf = " ss.rejectuser" >You ended transaction</div>
       </div>
      <div class = "col10 padding lvl3 midtext" *ngIf = "frontpicture" >
-      <span class = "midtext btnlg" (click)="scan()" *ngIf = "!ss.acceptuser &amp;&amp; !ss.rejectuser">Scan</span>
-      <span class = "midtext btnlg" (click)="confirm()" *ngIf = "ss.scannedval">Confirm</span>
-      <span class = "midtext btnlg" (click)="reject()" *ngIf = "ss.scannedval">Reject</span>
-      <span class = "midtext btnlg"  *ngIf = "ss.confirmationuser">Scanning</span>
+      <span class = "midtext btnlg" (click)="scan()" *ngIf = "!ss.acceptuser &amp;&amp; !ss.rejectuser &amp;&amp;  !ss.scannedval">Scan</span>
+      <span class = "midtext btnlg" (click)="confirm()" *ngIf = "ss.scannedval  || ss.confirmationuser">Confirm</span>
+      <span class = "midtext btnlg" (click)="reject()" *ngIf = "ss.scannedval  || ss.confirmationuser">Reject</span>
+     
      </div>
       <div class = "fix2">  
-     <div class = "col10 lvl4 padding bbottom bl " *ngIf = "scannedval  &amp;&amp; !ss.acceptuser &amp;&amp; !ss.rejectuser">Confirm  Payment of {{scandata}} Naira</div>
-     <div class = "col10 lvl4 padding bbottom bl " *ngIf = "ss.acceptuser &amp;&amp; !ss.rejectuser">Payment of {{scandata}} Naira Successful</div>
-      <div class = "col10 lvl4 padding bbottom bl "  *ngIf = "!ss.acceptuser &amp;&amp; ss.rejectuser">You ended transaction</div>
+     <div class = "col10 lvl4 padding bbottom bl " *ngIf = "scannedval">Confirm  Payment of {{scandata}} Naira</div>
+     <div class = "col10 lvl4 padding bbottom bl " *ngIf = "ss.acceptuser ">Payment of {{scandata}} Naira Successful</div>
+      <div class = "col10 lvl4 padding bbottom bl "  *ngIf = "ss.rejectuser">You ended transaction</div>
      </div>
    </div>
     </div><!--modal-->
 <div class = "footer">
   <div class = "row fullheight">
-  <div class = "col3 midtext transpdarkbg lvl2 footerthings valign " (click) = "scan()"><ion-icon name = "camera"></ion-icon></div>
-  <div class = "col7 midtext white lvl2 footerthings valign overflow">Finish</div>
+  <div class = "col3 midtext transpdarkbg lvl2 footerthings valign " (click) = "scan()"><ion-icon name = "qr-scanner"></ion-icon></div>
+  <div class = "col7 midtext white lvl2 footerthings valign overflow">close</div>
   </div>
   </div><!--div footer-->
 </ion-slide>

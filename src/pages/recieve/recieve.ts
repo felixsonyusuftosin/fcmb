@@ -29,6 +29,9 @@ export class RecievePage {
     tag:any;
     objo:any = {acceptreciever:false,rejectreciever:false, scanningreciever:false};
     pic:any;
+    acceptreciever:boolean = false;
+    rejectreciever:boolean = false;
+    scanningreciever:boolean = false;
     errorprice:boolean = false;
     errorpricetxt:string;
     paystat:string;
@@ -76,8 +79,12 @@ export class RecievePage {
     let th = this;
     console.log('Hello RecievePage Page');
     this.reset();
-    this.event.subscribe('mobilepay', (obj)=>{      
-      th.objo = obj;
+    this.event.subscribe('mobilepay', (obj)=>{  
+      console.log(obj);    
+      th.acceptreciever = obj.acceptreciever;
+      th.rejectreciever = obj.rejectreciever;
+      th.scanningreciever = obj.scanningreciever;
+     
     //let profileModal = this.ModalCrl.create(CallpagePage,objo);
      //profileModal.present();
     });

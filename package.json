@@ -23,6 +23,7 @@
     "@types/leaflet": "^1.0.48",
     "@types/pouchdb": "5.4.28",
     "angular-socket.io": "^0.1.6",
+    "cordova": "^6.4.0",
     "del": "^2.2.2",
     "express": "^4.14.0",
     "font-awesome": "^4.7.0",
