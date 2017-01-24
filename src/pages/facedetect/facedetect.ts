@@ -108,5 +108,7 @@ return new Promise(resolve=>{
   );
 });
 }
-
+close(){
+  this.navCtrl.pop();
+}
 }

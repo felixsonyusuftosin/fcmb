@@ -34,12 +34,12 @@ export class Data {
    loaded:boolean = false;
     onDevice: boolean;
   constructor() {      
-    this.db = new PouchDB('branchesupdatefv2finals', {adapter: 'websql'});
+    this.db = new PouchDB('branchesupdatefv2finalszn', {adapter: 'websql'});
     this.items = [];
     this.db.info().then(console.log.bind(console));
-    this.username = "ascaultsibledifeammoster";
-    this.password = "580bd4a02d7a6999689ab1fb3b20f0784309992c";
-    this.remote = 'https://siberobinsion.cloudant.com/branchesfcmb';  
+    this.username = "essediforinquirdeashattr";
+    this.password = "f6170f9aa93b22c0a152bd359c51ae077f438d22";
+    this.remote = 'https://siberobinsion.cloudant.com/brancheszenith';  
    this.options = { retry: true,  attachments:true,  auth: { username: this.username, password: this.password }
     };
      

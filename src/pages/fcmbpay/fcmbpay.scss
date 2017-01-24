@@ -1,8 +1,8 @@
 page-fcmbpay {
 /*overview */
 .headers{height:56px; vertical-align:top; width:100%; overflow:hidden;  background:#212643; color:#fff; line-height:56px; font-size:20px; padding:0px 15px;  box-sizing:border-box;}
-.lborders{border-left:solid 1px #FFB717; border-right:solid 1px #FFB717; }
-.tborders{border-top:solid 1px #FFB717;} .headers .lvl3{line-height:52px;} .headers .col5{vertical-align:top; padding:0px 20px; }
+.lborders{border-left:solid 1px #787878; border-right:solid 1px #787878; }
+.tborders{border-top:solid 1px #787878;} .headers .lvl3{line-height:52px;} .headers .col5{vertical-align:top; padding:0px 20px; }
 
 
 
@@ -41,7 +41,7 @@ input{height:50px; text-indent:10px; line-height:50px; font-size:25px; font-weig
 /*sepicific pages */
 
 .optionrows{height:58px; box-sizing:border-box; line-height:58px; padding:3px 10px; background:#fff; box-shadow:0 2px 2px -5px rgba(0,0,0,0.2);  padding-left:15px; border-bottom:solid 1px #ededed;}
-.active{background:#5C2684; color:#FFB717;}
+.active{background:#CE000B; color:#787878;}
 /* profilepage*/
 .top{height:55%;display:block; width:100%; box-sizing:border-box;  overflow:hidden; background-size:cover; background-repeat:no-repeat; background-position:top right;  background-image: url('../../assets/img/callgirl.jpg'); } /* deployment background-image: url('../../www/assets/img/callgirl.jpg');*/.gt { background-image: url('../../assets/img/gt.png');}/*deployment    .gt { background-image: url('../../www/assets/img/gt.png');}*/
 .gt{width:60px; height:60px; display:inline-block; margin-right:10px; background-size:contain; background-repeat:no-repeat;  vertical-align:top;}
@@ -51,14 +51,14 @@ input{height:50px; text-indent:10px; line-height:50px; font-size:25px; font-weig
 /*colors*/
 
 .footer{height:75px; position:relative; left:0px;   padding:0; line-height:75px; width:100vw; background:#212643;} .footerthings{height:75px; line-height:75px!important;}
-.green{color:#5C2684;} .greenbg{background:#5C2684; } .tsp{color:rgba(0,0,0,0.4);} .tsp2{color:#FFB717;} 
+.green{color:#CE000B;} .greenbg{background:#CE000B; } .tsp{color:rgba(0,0,0,0.4);} .tsp2{color:#787878;} 
 .gray1{color:#666!important;}.gray1{color:#999;}.lgray{color:#d2d2d2;} .white{color:#fff!important;}
 
 .bottom .lvl2{text-transform:capitalize!important;  font-weight:600!important; letter-spacing:1px!important }
 /**/
-.roundedthing, .profile{position:fixed; top:53%; left:10px;   box-shadow:0 5px 5px -2px rgba(0,0,0,0.5); width:60px; height:60px; font-size:24px; border-radius:50%; background:#5C2684; line-height:60px; text-align:center; }
-.roundedthing .i{ line-height:60px; text-align:center;  color:#FFB717;  }
-.yellow{color:#FFB717!important;}
+.roundedthing, .profile{position:fixed; top:53%; left:10px;   box-shadow:0 5px 5px -2px rgba(0,0,0,0.5); width:60px; height:60px; font-size:24px; border-radius:50%; background:#CE000B; line-height:60px; text-align:center; }
+.roundedthing .i{ line-height:60px; text-align:center;  color:#787878;  }
+.yellow{color:#787878!important;}
 .profile{top:48%; box-sizing:border-box; overflow:hidden; background:none; left:71%; right:10px; line-height:12px; height:60px; box-shadow:none; width:120px;  color:#fff; height:120px; }
 .profile .i{color:#fff; font-size:30px!important; width:44px; height:44px; line-height:44px;  border-radius:50%; background:rgba(255,255,255,0.5); margin-bottom:5px; text-align:center;}
 .profile .lvl4{line-height:14px;} .row{padding:0;} .valign{vertical-align:top; } 
