@@ -1,5 +1,5 @@
 <!--
-  Generated template for the Fcmbpay page.
+  Generated template for the Accesspay page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,7 +7,7 @@
  <!--<ion-header>
 
  <ion-navbar>
-    <ion-title>fcmbpay</ion-title>
+    <ion-title>Accesspay</ion-title>
   </ion-navbar>
 
 </ion-header>-->
@@ -60,7 +60,7 @@
        <ion-icon   name = "qr-scanner" class = "midtext ionicon"></ion-icon> 
      </div>  
      <div class = "fix">  
-     <div class = "col10 lvl2 padding lgray bbotom " *ngIf = "!scannedval" >Scan a pregenerated QR code user must use FCMB App or web platform</div>
+     <div class = "col10 lvl2 padding lgray bbotom " *ngIf = "!scannedval" >Scan a pregenerated QR code user must use Access App or web platform</div>
  <div class = "col10 lvl2 padding lgray bbotom " *ngIf = "scannedval &amp;&amp; !ss.rejectuser &amp;&amp; !ss.acceptuser  ">Confirm  Payment of {{scandata}} Naira</div>
  <div class = "col10 lvl2 padding lgray bbotom " *ngIf = "ss.acceptuser" >Success transaction of {{scandata}} Naira went through</div>
  <div class = "col10 lvl2 padding lgray bbotom " *ngIf = " ss.rejectuser" >You ended transaction</div>

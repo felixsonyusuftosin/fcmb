@@ -32,7 +32,7 @@ input{height:35px; display:inline-block; width:100%;  font-size:14px; line-heigh
 
 /*specific pages */
 .optionrows{height:58px; box-sizing:border-box; line-height:58px; padding:3px 10px; background:#fff; box-shadow:0 2px 2px -5px rgba(0,0,0,0.2);  padding-left:15px; border-bottom:solid 1px #ededed;}
-.active{background:#FFB717; color:#5C2684;}
+.active{background:#F38230; color:#004283;}
 /* profilepage*/
 .top{height:50%;display:block; width:100%; box-sizing:border-box;  overflow:hidden; background-size:cover; background-repeat:no-repeat; background-position:top right;  background-image: url('../../www/assets/img/callgirl.jpg'); } /* deployment background-image: url('../../www/assets/img/callgirl.jpg');*/.gt { background-image: url('../../www/assets/img/gt.png');}/*deployment    .gt { background-image: url('../../www/assets/img/gt.png');}*/
 .gt{width:60px; height:60px; display:inline-block; margin-right:10px; background-size:contain; background-repeat:no-repeat;  vertical-align:top;}
@@ -42,18 +42,18 @@ input{height:35px; display:inline-block; width:100%;  font-size:14px; line-heigh
 /*colors*/
 
 .footer{height:55px; position:fixed; bottom:0px;  line-height:55px;}
-.green{color:#5C2684;} .greenbg{background:#5C2684; } 
+.green{color:#004283;} .greenbg{background:#004283; } 
 .gray1{color:#666!important;}.gray1{color:#999;}.lgray{color:#d2d2d2;} .white{color:#fff!important;}
 .bottom .lvl2{text-transform:capitalize!important;  font-weight:600!important; letter-spacing:1px!important }
 /**/
-.roundedthing, .profile{position:fixed; top:53%; left:10px;   box-shadow:0 5px 5px -2px rgba(0,0,0,0.5); width:60px; height:60px; font-size:24px; border-radius:50%; background:#5C2684; line-height:60px; text-align:center; }
-.roundedthing .i{ line-height:60px; text-align:center;  color:#FFB717;}
-.yellow{color:#FFB717!important;}
+.roundedthing, .profile{position:fixed; top:53%; left:10px;   box-shadow:0 5px 5px -2px rgba(0,0,0,0.5); width:60px; height:60px; font-size:24px; border-radius:50%; background:#004283; line-height:60px; text-align:center; }
+.roundedthing .i{ line-height:60px; text-align:center;  color:#F38230;}
+.yellow{color:#F38230!important;}
 .profile{top:48%; box-sizing:border-box; overflow:hidden; background:none;  right:30px;  left:65%; line-height:12px; height:60px; box-shadow:none; width:120px;  color:#fff; height:120px; }
 .profile .i{color:#fff; font-size:30px!important; width:44px; height:44px; line-height:44px;  border-radius:50%; background:rgba(255,255,255,0.5); margin-bottom:5px; text-align:center;}
 .profile .lvl4{line-height:14px;}
 .headers{height:56px; vertical-align:top; width:100%; overflow:hidden; background:#F52966; color:#fff; line-height:56px; font-size:20px; padding:0px 15px;  box-sizing:border-box; box-shadow:3px 3px 5px rgba(0,0,0,0.4);}
-.lborders{border-left:solid 1px #FFB717; border-right:solid 1px #FFB717; }
-.tborders{border-top:solid 1px #FFB717;} .headers .lvl3{line-height:52px;} .headers .col5{vertical-align:top; padding:0px 20px; }
+.lborders{border-left:solid 1px #F38230; border-right:solid 1px #F38230; }
+.tborders{border-top:solid 1px #F38230;} .headers .lvl3{line-height:52px;} .headers .col5{vertical-align:top; padding:0px 20px; }
 .disabled{opacity:0.7;  background:#fafafa; }
 } 
