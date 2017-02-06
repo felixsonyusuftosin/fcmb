@@ -17,9 +17,9 @@
   <div class = "top"><ion-icon name = "arrow-back" *ngIf ="signin || signup" (click) = "reregister()"></ion-icon></div>
    <div class = "top"><ion-icon name = "arrow-back" *ngIf ="notregistered" (click) = "poppage()"></ion-icon></div>
   <div class = "first-set"><span class = "gt"></span></div>
-   <div class = "second-set"><span class = "bold">Access</span>&nbsp; Connect APP<div class = "small">Access Nigeria..</div></div>   
+   <div class = "second-set"><span class = "bold">Union</span>&nbsp; Connect APP<div class = "small">Union Nigeria..</div></div>   
      <div class = "fourth-set" *ngIf = "notregistered">
-       <div class = "th" *ngIf = "notregistered"> Please Sign in if you have a preregistered account, Other wise Signup,  you can use this application even if you are not a Access customer</div>
+       <div class = "th" *ngIf = "notregistered"> Please Sign in if you have a preregistered account, Other wise Signup,  you can use this application even if you are not a Union customer</div>
        <div class = "btns signin" (click) = "signingin()" *ngIf = "notregistered">Sign In</div><div class = "btns signup" *ngIf = "notregistered" (click) = "signingup()">Sign Up</div>
     
      </div>
@@ -28,7 +28,7 @@
        <div class = "formitem  col-90"><input type = "passsword"  placeholder="password" [(ngModel)] ="userservice.clientpassword"  class = "forminput"></div>  
        <div class = "hapening" *ngIf = "userservice.logingin"><i class = "fa fa-circle-o-notch fa-spin  fa-fw"></i><span>Attempting login please wait ...</span></div>   
         <div class = "hapening" *ngIf = "userservice.loginfailed">Could not log in your credentials have you <span (click) = "signingup()">signed up</span> before? </div>   
-         <div class = "hapening" *ngIf = "userservice.loggedin " (click) = "gotonext()"> Successfully Logged in , Welcome to Access Connect...</div>     
+         <div class = "hapening" *ngIf = "userservice.loggedin " (click) = "gotonext()"> Successfully Logged in , Welcome to Union Connect...</div>     
       <span class = "btns submit" *ngIf = "userservice.logininit" (click) = "userservice.login();  ">Submit</span>
          <div class = "forgotpassword">Have You forgotten your Password?</div>
        <div class = "recognize" *ngIf = "recognize" >Sorry we do not recognize this username and password, Have You registered for an account??</div>
@@ -38,7 +38,7 @@
        <div class = "formitem  col-90"><input type = "passsword"  placeholder="password" [(ngModel)] ="userservice.clientpassword"  class = "forminput"></div>  
        <div class = "formitem  col-90"><input type = "text"  placeholder="Phone Number" [(ngModel)] ="userservice.clientphone"  class = "forminput"></div>   
         <div class = "hapening" *ngIf = "userservice.signingup"><i class = "fa fa-circle-o-notch fa-spin  fa-fw"></i><span>Attempting signup please wait ...</span></div>   
-        <div class = "hapening" *ngIf = "userservice.failedsignup">Could not sign up, please check your internet access</div>   
+        <div class = "hapening" *ngIf = "userservice.failedsignup">Could not sign up, please check your internet Union</div>   
          <div class = "hapening" *ngIf = "userservice.successsignedup"> Successfully Signed up ,<span (click) = "signingin()">Please Login your account</span></div>     
       <span class = "btns submit" *ngIf = "userservice.signupinit" (click) = "userservice.signup()">Submit</span>
          <div class = "forgotpassword"  (click) = "signingin();">Sign in</div>  

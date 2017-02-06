@@ -60,7 +60,7 @@ initialize(peer_phone:number):Promise<any>{
 showmodal(isCalling,callIgnored,callEnded,defult,callInProgress,t) {
   console.log('displaying call ......')
    let  p = 1;
-   let itemz:any = [{geoaddress:"Marina Lagos Island Lagos", address:"FCMB Customer Care"}];
+   let itemz:any = [{geoaddress:"Marina Lagos Island Lagos", address:"Union Customer Care"}];
    //let profileModal = this.modalCtrl.create(CallpagePage, { scall:this, callInProgress: callInProgress,default :defult, callIgnored:callIgnored, callEnded:callEnded, isCalling:isCalling,p:p, item:itemz });
   // profileModal.present();
   this.navCtrl.push(CallpagePage, { scall:t, callInProgress: callInProgress,default :defult, callIgnored:callIgnored, callEnded:callEnded, isCalling:isCalling,p:p, item:itemz });
